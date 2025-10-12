@@ -135,3 +135,8 @@ jobs:
           else
             gh release edit pdfs --latest --notes-file ./.build-release-notes.md
           fi
+      - name: Upload pdfs as a pages artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_build/results/
