@@ -15,6 +15,9 @@ concurrency:
 jobs:
   release:
     name: Build and release PDFs
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Setup Git repository (shallow)
@@ -91,6 +94,16 @@ jobs:
               fi
             done
 
+      - name: Upload pdfs as a pages artifact
+        id: deployment-upload
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_build/results/
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Get deployment URL
+        run: echo "Your site is live at ${{ steps.deployment.outputs.page_url }}"
       - name: Update the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -120,6 +133,7 @@ jobs:
 
             if [ -f "./_build/results/${dir}.pdf" ]; then
               BUILD="$BUILD<br>[PDF&nbsp;file](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
+              BUILD="$BUILD<br>[PDF&nbsp;file&nbsp;(no-download)](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
               gh release upload pdfs "./_build/results/${dir}.pdf" --clobber
             else
               grep -q "^${dir}.pdf$" ./.build-old-assets && gh release delete-asset pdfs "${dir}.pdf"
@@ -135,21 +149,3 @@ jobs:
           else
             gh release edit pdfs --latest --notes-file ./.build-release-notes.md
           fi
-      - name: Upload pdfs as a pages artifact
-        id: deployment
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./_build/results/
-  deploy:
-    needs: release
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
