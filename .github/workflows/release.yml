@@ -15,6 +15,12 @@ concurrency:
 jobs:
   release:
     name: Build and release PDFs
+    permissions:
+      actions: write
+      contents: write
+      id-token: write
+      pages: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
       - name: Setup Git repository (shallow)
