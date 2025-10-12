@@ -133,8 +133,7 @@ jobs:
             gh release upload pdfs "./_build/results/${dir}.log" --clobber
 
             if [ -f "./_build/results/${dir}.pdf" ]; then
-              BUILD="$BUILD<br>[PDF&nbsp;file](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
-              BUILD="$BUILD<br>[PDF&nbsp;file&nbsp;(no-download)](${{ steps.deployment.outputs.page_url }}${dir}.pdf)"
+              BUILD="$BUILD<br>[PDF&nbsp;file](${{ steps.deployment.outputs.page_url }}${dir}.pdf)"
               gh release upload pdfs "./_build/results/${dir}.pdf" --clobber
             else
               grep -q "^${dir}.pdf$" ./.build-old-assets && gh release delete-asset pdfs "${dir}.pdf"
