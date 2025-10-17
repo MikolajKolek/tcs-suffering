@@ -1,0 +1,93 @@
+\subsection{Algebra i \(\sigma\)-algebra}
+
+\begin{definition}
+	\textbf{Algebra} to takie \(\Sigma \subset 2^{\Omega}\) dla danego uniwersum \(\Omega\), że spełnione są następujące warunki
+	\begin{itemize}
+		\item \(\emptyset, \Omega \in \Sigma\)
+		\item \(e \in \Sigma \implies \Omega \setminus e \in \Sigma\)
+		\item \(E_1, \dots, E_n \in \Sigma \implies \bigcup_{i=1}^n E_i \in \Sigma\)
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	\textbf{\(\sigma\)-algebra} to algebra spełniająca dodatkowy warunek
+	\[
+		E_1, \dots \in \Sigma \implies \bigcup_{i=1}^{\infty} E_i \in \Sigma\)
+	\]
+\end{definition}
+
+\begin{example}
+	Proste przykłady algebr i \(\sigma-algebr\)
+	\begin{itemize}
+		\item \(\Sigma = 2^{\Omega}\) - \(\sigma\)-algebra
+		\item \(\Sigma = \set{\emptyset, \Omega}\) - \(\sigma\)-algebra
+		\item \(\Omega = \real, \Sigma = \set{\bigcup_{i=1}^n (a_i, b_i] \mid a_i, b_i \in \real \cup \set{-\infty, \infty}, a_i < b_i}\) - algebra, ale nie \(\sigma\)-algebra, bo np. \(\bigcup_{i=1}^\infty (0, 1 - \frac{1}{n}] = (0, 1) \notin \Sigma\)
+	\end{itemize}
+\end{example}
+
+\begin{lemma}
+	Niech \(\Omega\) to uniwersum, a \((\Sigma_\alpha)_{\alpha \in I}\) to \(\sigma\)-algebry na \(\Omega\). Wtedy
+	\[
+		\bigcap_{\alpha \in I} \Sigma_\alpha \text{ jest \(\sigma\)-algebrą}
+	\]
+\end{lemma}
+% TODO: dowód (nie był podany na wykładzie)
+
+\begin{definition}
+	\textbf{\(\sigma\)-algebra generowana przez \(F \subset 2^\Omega\)} to
+	\[
+		\sigma(F) = \bigcap_{\substack{\Sigma \text{ - } \sigma\text{-algebra}\\F \subset \Sigma}} \Sigma
+	\]
+	
+	Intuicyjnie, jest to najmniejsza możliwa \(\sigma\)-algebra zawierająca w sobie \(F\)
+\end{definition}
+
+\begin{example}
+	Przykład \(\sigma\)-algebry generowanej
+	\[
+		\sigma(\set{[a, b] \mid a, b \in \real, a \leq b}) := B(\real) \text{ (zbiory borelowskie)}
+	\]
+\end{example}
+
+
+\subsection{Miara}
+
+\begin{definition}
+	\textbf{Przestrzeń mierzalna} to para \((\Omega, \Sigma)\) dla uniwersum \(\Omega\) i \(\Sigma\) będącego \(\sigma\)-algebrą na \(\Omega\)
+\end{definition}
+
+\begin{definition}
+	\textbf{Miara} dla danej przestrzeni mierzalnej \((\Omega, \Sigma)\) to funkcja \(\mu: \Sigma \to [0, \infty]\) spełniająca
+	\begin{itemize}
+		\item \(\mu(\emptyset) = 0\)
+		\item \(E_1, E_2, \dots \in \Sigma \text{ parami rozłaczne } \implies \mu(\bigcup_{i=1]^\infty E_i}) = \sum_{i=1}^{\infty} \mu(E_i)\)
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	\textbf{Miara probabilistyczna} to miara dla której \(\mu(\Omega) = 1\)
+\end{definition}
+
+\begin{lemma}
+	Niech \(A_1, A_2, \dots, \in \Sigma, \forall_{i \in \natural_+} A_i \subset A_{i+1}\). Wtedy
+	\[
+		\mu(\bigcup_{i=1}^\infty A_i) = \lim_{x \to \infty} \mu(A_i)
+	\]
+\end{lemma}
+% TODO: dowód (nie był podany na wykładzie)
+
+\begin{lemma}
+	Niech \(A_1, A_2, \dots, \in \Sigma, \forall_{i \in \natural_+} A_i \supset A_{i+1}\) oraz \(\mu(A_1) < \infty\). Wtedy
+	\[
+		\mu(\bigcap_{i=1}^\infty A_i) = \lim_{x \to \infty} \mu(A_i)
+	\]
+\end{lemma}
+
+\begin{example}
+	Przykłady miar:
+	\begin{itemize}
+		\item Miara licząca: \(\Omega < \infty, \mu(A) = |A|\)
+		\item Miara Lebesgue'a (długość, pole, objętość, etc.)
+	\end{itemize}
+\end{example}
+% TODO: dowód (nie był podany na wykładzie)
