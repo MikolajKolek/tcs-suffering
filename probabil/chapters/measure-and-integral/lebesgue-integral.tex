@@ -103,7 +103,28 @@ Od teraz niech \( E \in \Sigma \)
 
 Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z funkcji prostej. Potem na jej podstawie defniujemy całkę z funkcji nieujemnej mierzalnej i ostatecznie dochodzimy do dowolnej funkcji mierzalnej.
 
-% TODO: brakujące twierdzenie
+\begin{theorem} (bez dowodu)
+
+    Dla:
+
+    \( f: \left( \Omega, \Sigma \right) \to [0, +\infty] \) mierzalna
+
+    \( \{S_n\}_{n = 1}^{+\infty} \)
+
+    \( S_n : \Omega \to [0, +\infty] \), \( S_1 \leq S_2 \leq \ldots \leq f \), \( \forall_{x \in \Omega} f(x) = \lim_{n \to \infty} S_n(x) \) \hfill \( (*) \)
+    
+    Zachodzi:
+
+    \[
+        \forall_{E \in \Sigma} \int_E f \diff \mu = \lim_{n \to \infty} \int_E S_n \diff \mu
+    \]
+\end{theorem}
+
+\begin{theorem}
+    \[
+        f : \left( \Omega, \Sigma \right) \to [0, +\infty] \text{ mierzalna } \implies \exists \{S_n\}_{n = 1}^{+\infty} \text{ takie, że } (*)
+    \]
+\end{theorem}
 
 \begin{corollary}
 
