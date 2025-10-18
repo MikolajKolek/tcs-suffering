@@ -52,6 +52,15 @@
 \declaretheorem[numberwithin=section,name=Wniosek]{corollary}
 \declaretheorem[numbered=no,name=Pytanie]{question}
 
+% A fix required for hyperref links
+\renewcommand\theHtheorem{\thesection.\arabic{theorem}}
+\renewcommand\theHlemma{\thesection.\arabic{lemma}}
+\renewcommand\theHexercise{\thesection.\arabic{exercise}}
+\renewcommand\theHdefinition{\thesection.\arabic{definition}}
+\renewcommand\theHexample{\thesection.\arabic{example}}
+\renewcommand\theHfact{\thesection.\arabic{fact}}
+\renewcommand\theHcorollary{\thesection.\arabic{corollary}}
+
 
 % Common sets
 \def\natural{\mathbb{N}}
