@@ -1,24 +1,24 @@
 \subsection{Definicje}
 
 \begin{definition}
-    Funckja \( S: \Omega\to [0, \infty] \) jest \textbf{prosta} (schodkowa), jeśli:
+    Funckja \( S: \Omega\to [0, +\infty] \) jest \textbf{prosta} (schodkowa), jeśli:
     \[
         S = \sum_{j = 1}^{n} \alpha_j \chi_{A_j}
     \]
-    gdzie \( \forall_{j \in [n]} A_j \in \Sigma, \alpha_j \in \R \)
+    gdzie \( \forall_{j \in [n]} A_j \in \Sigma, \alpha_j \in \real \)
     a \( \chi_{A_j} \) jest funkcją charakterystyczną \( A_j \)
 \end{definition}
 
 Od teraz niech \( E \in \Sigma \)
 
 \begin{definition}
-    Niech \( S : \Omega\to [0, \infty] \) - funkcja prosta.
+    Niech \( S : \Omega\to [0, +\infty] \) - funkcja prosta.
     \[
         \int_E S \diff \mu := \sum_{j = 1}^n \alpha_j \mu\left(A_j \cap E \right)
     \]
     Gdzie \( \mu \) jest miarą Lebesgue'a.
 
-    Można sobie to wyobrazić jako suma pól prostokątów pod funkcją \( S \)
+    Można sobie to wyobrazić jako suma pól prostokątów pod funkcją \( S \):
 
     \begin{figure}[h!]
         \centering
@@ -69,14 +69,14 @@ Od teraz niech \( E \in \Sigma \)
 \end{definition}
 
 \begin{definition}
-    Niech \( f: \Omega\to [0, \infty] \) - funkcja mierzalna.
+    Niech \( f: \Omega\to [0, +\infty] \) - funkcja mierzalna.
     \[
-        \int_E f \diff \mu = \sup \left\{\int_E s \diff \mu \middle| s: \Omega\to [0, \infty], s \text{ jest prosta, } s \leq f \right\}
+        \int_E f \diff \mu = \sup \left\{\int_E s \diff \mu \; : \; s: \Omega\to [0, \infty], s \text{ jest prosta, } s \leq f \right\}
     \]
 \end{definition}
 
 \begin{definition}
-    Niech  \( f: \Omega\to \R \) mierzalna
+    Niech  \( f: \Omega\to \real \) mierzalna
 
     \( f_+ := \max \left\{0, f\right\} \)
 
@@ -90,7 +90,7 @@ Od teraz niech \( E \in \Sigma \)
 \begin{definition}
     Dla liczb zespolonych:
 
-    \( f: \Omega\to \C \)
+    \( f: \Omega\to \mathbb{C} \)
 
     Dzielimy \( f \) na część rzeczywistą i urojoną:
 
@@ -111,7 +111,7 @@ Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z
 
     \textbf{Prawdopodobieństwo} definiujemy jako miarę probabilistyczną na \( \left( \Omega, \Sigma \right) \)
 
-    \textbf{Zmienną losową} definiujemy jako funkcję mierzalną \( f: \left( \Omega, \Sigma \right) \to \R \)
+    \textbf{Zmienną losową} definiujemy jako funkcję mierzalną \( f: \left( \Omega, \Sigma \right) \to \real \)
 
     \textbf{Wartość oczekiwaną} definiujemy:
     \[
@@ -128,12 +128,9 @@ Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z
 
 \subsection{Przykłady}
 
-\begin{example} 
-    Różne miary
+\begin{example}
 
-    \( \left| \Omega \right| = n < \infty \)
-
-    \( \Sigma = 2^{\Omega} \)
+    Niech \( \left| \Omega \right| = n < +\infty \), \( \Sigma = 2^{\Omega} \)
 
     Niech \( X \) - zmienna losowa przyjmująca wartości od 1 do \( n \) z równym prawdopodobieństwem.
 
@@ -173,7 +170,7 @@ Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z
 
     \( \Omega = \real \), \( \Sigma = B(\real) \), \( A \in \Sigma \)
 
-    Niech \( \int_{-\infty}^{\infty} f(x) \diff x = 1 \), oraz chcemy losować zgodnie z \( f \).
+    Niech \( \int_{-\infty}^{+\infty} f(x) \diff x = 1 \), oraz chcemy losować zgodnie z \( f \).
 
     Wtedy \( \prob(A) = \int_A f \diff \lambda \) 
 
@@ -200,7 +197,7 @@ Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z
 \begin{example}
     Nieskończony ciąg rzutów monetą symetryczną.
 
-    \( \Omega = \left\{ (X_n)_{n = 1}^{\infty} : X_n \in \{0, 1\} \right\} \)
+    \( \Omega = \left\{ (X_n)_{n = 1}^{+\infty} : X_n \in \{0, 1\} \right\} \)
 
     Pojawia się problem - jak zdefiniować \( \Sigma \), aby był mierzalny?
 
@@ -210,7 +207,7 @@ Co tutaj w ogóle definiujemy? Zaczynamy od definicji funkcji prostej i całki z
         a_1, \ldots, a_k \in \{0, 1\} 
     \]
     \[ 
-        [a_1, \ldots, a_k] := \left\{ (x_n)_{n=1}^{\infty} \middle| a_1 = x_1, \ldots, a_k = x_k \right\} 
+        [a_1, \ldots, a_k] := \left\{ (x_n)_{n=1}^{+\infty} \middle| a_1 = x_1, \ldots, a_k = x_k \right\} 
     \]
     \[ 
         \text{Cyl} := \left\{ [a_1, \ldots, a_k] \middle| a_1, \ldots, a_k \in \{0, 1\}, k \in \natural \right\} 
