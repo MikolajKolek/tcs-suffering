@@ -30,7 +30,6 @@
 %\immediate\write18{rm -f .builddir}
 
 % Better links
-\usepackage{hyperref}
 \usepackage{xr}
 
 % Figures
@@ -82,3 +81,6 @@
 
 % Import custom commands
 \usepackage{tcs}
+
+% Hyperref must be loaded last for footnote links to work (and it's generally recommended)
+\usepackage{hyperref}
