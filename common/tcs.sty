@@ -174,7 +174,6 @@
 \def\npspace{\textsc{NPSPACE}}
 \def\exptime{\textsc{EXPTIME}}
 \def\re{\textsc{RE}}
-\def\r{\textsc{R}}
 \newcommand{\reg}[1]{\textsc{REG}_#1}
 \newcommand{\cfl}[1]{\textsc{CFL}_#1}
 \newcommand{\csl}[1]{\textsc{CSL}_#1}
@@ -273,3 +272,9 @@
 }{
 	\end{customframe}
 }
+
+% Hyperref must be loaded last for footnote links to work (and it's generally recommended)
+\usepackage{hyperref}
+% This was a part of the Complexity section above, but
+% for some reason, it must happen after hyperref is loadaed
+\def\r{\textsc{R}}
