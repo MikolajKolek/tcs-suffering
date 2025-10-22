@@ -133,7 +133,7 @@ jobs:
             gh release upload pdfs "./_build/results/${dir}.log" --clobber
 
             if [ -f "./_build/results/${dir}.pdf" ]; then
-              BUILD="$BUILD<br>[PDF&nbsp;file]($SUFFERING_CUSTOM_URL${dir}.pdf)"
+              BUILD="$BUILD<br>[PDF&nbsp;file](${{ vars.SUFFERING_CUSTOM_URL }}${dir}.pdf)"
               BUILD="$BUILD<br>[PDF&nbsp;file&nbsp;(download)](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
               gh release upload pdfs "./_build/results/${dir}.pdf" --clobber
             else
