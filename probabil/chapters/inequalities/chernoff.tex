@@ -2,6 +2,7 @@
 \subsection{Definicja}
 Łączymy ze sobą dwie rzeczy -- funkcje tworzące momentów, oraz nierówność Markowa.
 \begin{theorem}
+	\label{chernoff-inequality}
 	\[
 		\forall_{t > 0} : P(X \geq a) = P(e^{tX} \geq e^{ta}) \leq \frac{\expected{e^{tX}}}{e^{ta}}
 	\]
@@ -22,6 +23,7 @@
 \end{proof}
 
 \subsection{Rzuty monetą}
+\label{chernoff-coin-tosses}
 
 \begin{definition}
 	\textbf{Próbami Poissona} nazywany ciąg zmiennych losowych \( X_1, \dots, X_n \), dla których
