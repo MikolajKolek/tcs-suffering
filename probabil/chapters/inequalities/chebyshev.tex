@@ -34,16 +34,16 @@ Niech \(X_i = \begin{cases}
 	\forall_{i \in [n]} \ev{X_i} = \frac{1}{2} \land \ev{{X_i}^2} = \frac{1}{2}
 \]
 \[
-	\Var{X_i} = \ev{X_i^2} - \ev{X_i}^2 = \frac{1}{2} - \left(\frac{1}{2}\right)^2 = \frac{1}{4}
+	\variance{X_i} = \ev{X_i^2} - \ev{X_i}^2 = \frac{1}{2} - \pars{\frac{1}{2}}^2 = \frac{1}{4}
 \]
 
 Ponieważ zmienne losowe \(X_i\) są od siebie niezależne, to z \ref{variance-of-sum-of-independent-variables} mamy
 \[
-	\Var{X} = \sum_{i=1}^n \Var{X_i} = \frac{n}{4}
+	\variance{X} = \sum_{i=1}^n \variance{X_i} = \frac{n}{4}
 \]
 a więc, z nierówności Chebysheva
 \[
-	\prob\left(X \geq \frac{3}{4}n\right) = \prob\left(X - \frac{n}{2} \geq \frac{n}{4}\right) \leq \prob\left(\abs{X - \frac{n}{2}} \geq \frac{n}{4}\right) \leq \frac{\frac{n}{4}}{16} = \frac{4}{n}
+	\prob\pars{X \geq \frac{3}{4}n} = \prob\pars{X - \frac{n}{2} \geq \frac{n}{4}} \leq \prob\pars{\abs{X - \frac{n}{2}} \geq \frac{n}{4}} \leq \frac{\frac{n}{4}}{16} = \frac{4}{n}
 \]
 
 \subsection{Kolekcjoner kuponów}

@@ -15,7 +15,7 @@ oraz
 \midrule
 Nierówność Markowa (\ref{markov-inequality}) & \(\frac{2}{3}\) (\ref{markov-coin-tosses}) & \(\frac{1}{2}\) (\ref{markov-coupon-collector}) \\
 
-Nierówność Czebyszewa (\ref{chebyshev-inequality}) & \(\frac{4}{n}\) (\ref{chebyshev-coin-tosses}) & \(O(\frac{1}{ln^2 n})\) (\ref{chebyshev-coupon-collector})\\
+Nierówność Czebyszewa (\ref{chebyshev-inequality}) & \(\frac{4}{n}\) (\ref{chebyshev-coin-tosses}) & \(O(\frac{1}{\ln^2 n})\) (\ref{chebyshev-coupon-collector})\\
 
 Nierówność Chernoffa (\ref{chernoff-inequality}) & \(e^{-\frac{n}{20}}\) (\ref{chernoff-coin-tosses})& \(e^{-n}\) \\
 
@@ -27,16 +27,16 @@ W następnych sekcjach pokażdemy odpowiednie definicje tych nierówności oraz 
 
 \begin{example} Union bound dla kolekcjonera kuponów\\
 	\label{union-bound-coupon-collector}
-	Niech \(A_i\) to zdarzenie polegające na nieuzyskaniu \(i\)-tego kuponu po \(n ln(n) + cn\) krokach
+	Niech \(A_i\) to zdarzenie polegające na nieuzyskaniu \(i\)-tego kuponu po \(n \ln(n) + cn\) krokach
 	\[
-		\prob\left(A_i\right) = \left(1 - \frac{1}{n}\right)^{n ln(n) + cn} = \left(1 + \frac{1}{-n}\right)^{-n(-ln(n) -c)} \leq e^{-(ln(n) + c)} = \frac{1}{e^c n}
+		\prob\pars{A_i} = \pars{1 - \frac{1}{n}}^{n \ln(n) + cn} = \pars{1 + \frac{1}{-n}}^{-n(-\ln(n) -c)} \leq e^{-(\ln(n) + c)} = \frac{1}{e^c n}
 	\]
 	Z \ref{union-bound} wiemy, że
 	\[
-		\prob\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n \prob\left(A_i\right) = \frac{1}{e^c}
+		\prob\pars{\bigcup_{i=1}^n A_i} = \sum_{i=1}^n \prob\pars{A_i} = \frac{1}{e^c}
 	\]
-	Niech \(c = ln(n)\), a więc \(A_i\) to zdarzenie polegające na nieuzyskaniu \(i\)-tego kuponu po \(2n ln(n)\) krokach, a \(2n ln(n) \leq 2n H_n\), a więc
+	Niech \(c = \ln(n)\), a więc \(A_i\) to zdarzenie polegające na nieuzyskaniu \(i\)-tego kuponu po \(2n \ln(n)\) krokach, a \(2n \ln(n) \leq 2n H_n\), a więc
 	\[
-		\prob(X \geq 2n H_n) \leq \prob\left(X \geq 2n ln(n)\right) = \prob\left(\bigcup_{i=1}^n A_i\right) \leq \frac{1}{e^{ln(n)}} = \frac{1}{n}
+		\prob(X \geq 2n H_n) \leq \prob\pars{X \geq 2n \ln(n)} = \prob\pars{\bigcup_{i=1}^n A_i} \leq \frac{1}{e^{\ln(n)}} = \frac{1}{n}
 	\]
 \end{example}
