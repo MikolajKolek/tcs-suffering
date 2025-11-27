@@ -42,13 +42,13 @@ Mniej formalnie - na rozwój wydarzeń ma jedynie wpływ stan łańcucha, a nie 
 \begin{definition}
 	\(P_{ij}(n) = P(X_n = j \mid X_0 = i)\) \\
 \end{definition}
+%</probabil-2025-11-19-lancuchy-markowa-definicje>
 
 %<*probabil-2025-11-19-rozklad-stacjonarny>
 \begin{definition}
 	\textbf{Rozkładem stacjonarnym} nazywamy wektor \( \bar \pi \) taki, że \( \bar \pi = \bar \pi \mathbf{P} \) oraz \( \sum_i \bar \pi_i = 1 \)
 \end{definition}
 Intuicyjnie rozkład stacjonarny opisuje jak często asymptotycznie odwiedzamy każdy ze stanów niezależnie od tego skąd zaczęliśmy. Rozkład stacjonarny nie zawsze istnieje - np. łańcuch na liczbach naturalnych, taki, że \( p(n, n + 1) = 1\) w oczywisty sposób nie ma rozkładu stacjonarnego.
-%</probabil-2025-11-19-lancuchy-markowa-definicje>
 
 \begin{theorem} Istnienie rozkładu stacjonarnego
 	
@@ -86,6 +86,12 @@ Intuicyjnie rozkład stacjonarny opisuje jak często asymptotycznie odwiedzamy k
 	\(\prob_z(X_0 = y) = \prob_z(X_{T_z^+} = y)\) ponieważ oba są indykatorami \(x = y\).
 \end{proof}
 %</probabil-2025-11-19-rozklad-stacjonarny>
+%<*probabil-2025-11-21-rozklad-stacjonarny-kontynuacja>
+\begin{theorem}
+	Unikanlość rozkładu stacjonarnego
+	
+\end{theorem}
+%</probabil-2025-11-21-rozklad-stacjonarny-kontynuacja>
 
 \begin{exercise}
 	Niech dana będzie macierz \( Q \) wymiaru \( n \times n \), taka, że suma wartości w każdym wierszu wynosi 1.
