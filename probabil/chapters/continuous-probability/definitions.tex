@@ -18,17 +18,17 @@ Wizualizujemy to jako pole pod wykresem:
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[>=stealth]
-		\draw[->] (-0.5,0) -- (6.5,0) node[right] {$x$}
+		\draw[->] (-0.5,0) -- (6.5,0) node[right] {$x$};
 	
 		\def\Func{2*exp(-(\x-3)^2 / 2) + 0.5}
-		\draw[thick, blue] plot[domain=0:6, smooth, samples = 100] (\x, {\Func}) node[right, black] {$f(x)$}
+		\draw[thick, blue] plot[domain=0:6, smooth, samples = 100] (\x, {\Func}) node[right, black] {$f(x)$};
 		\def\xa{1}
 		\def\xb{4}
 
-		\fill[gray!50, opacity=0.7] plot[domain=\xa:\xb, smooth, samples = 50] (\x, {\Func}) -- (\xb,0) -- (\xa,0) -- cycle
+		\fill[gray!50, opacity=0.7] plot[domain=\xa:\xb, smooth, samples = 50] (\x, {\Func}) -- (\xb,0) -- (\xa,0) -- cycle;
 
-		\draw (\xa, 0.1) -- (\xa, -0.1) node[below] {$a$}
-		\draw (\xb, 0.1) -- (\xb, -0.1) node[below] {$b$}
+		\draw (\xa, 0.1) -- (\xa, -0.1) node[below] {$a$};
+		\draw (\xb, 0.1) -- (\xb, -0.1) node[below] {$b$};
 	\end{tikzpicture}
 	\caption{Przykład dla \(\prob\pars{a < X < b}\)}
 \end{figure}
