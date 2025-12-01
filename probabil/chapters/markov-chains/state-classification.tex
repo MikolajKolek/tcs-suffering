@@ -1,11 +1,11 @@
 %<*probabil-2025-11-19-stany-definicje1>
 \begin{definition}
-	Stan \(i\) jest \textbf{pochłaniający} jeśli \(P_{ii} = 1\).
+	Stan \(i\) jest \textbf{pochłaniający} jeśli \(p_{ii} = 1\).
 \end{definition}
 
 \begin{definition}
 	Stan \(j\) jest \textbf{osiągalny} ze stanu \(i\) jeśli istnieje \(n \geq 0\) takie, że
-	\(P_{ij}(n) > 0\).
+	\(p_{ij}(n) > 0\).
 \end{definition}
 
 \begin{definition}
@@ -19,17 +19,17 @@
 \begin{proof} Rozważamy trzy warunki bycia relacją równoważności
 	\begin{enumerate}
 		\item \( i \leftrightarrow i \) \\
-		      Możemy dojść z \( i \) do \( i \) w 0 krokach -- \(P_{ij}(0) = 1\)
+		      Możemy dojść z \( i \) do \( i \) w 0 krokach -- \(p_{ij}(0) = 1\)
 
 		\item \( i \leftrightarrow j \implies j \leftrightarrow i \) \\
 		      Koniunkcja jest przemienna, możemy zatem zamienić kolejność warunków w definicji.
 
 		\item \( i \leftrightarrow j \land j \leftrightarrow k \implies i \leftrightarrow k \) \\
-		      Skoro \( i \leftrightarrow j \) to mamy \( n \) dla którego \(\P_{ij}(n) > 0\).
+		      Skoro \( i \leftrightarrow j \) to mamy \( n \) dla którego \(\p_{ij}(n) > 0\).
 
-		      Podobnie mamy \( m \) dla którego \( \P_{jk}(m) > 0 \).
+		      Podobnie mamy \( m \) dla którego \( \p_{jk}(m) > 0 \).
 
-		      W takim razie \( P_{ik}(n+m) \geq P_{ij}(n) \cdot \P_{jk}(m) > 0 \)
+		      W takim razie \( p_{ik}(n+m) \geq p_{ij}(n) \cdot \p_{jk}(m) > 0 \)
 		      zatem \( k \) jest osiągalne z \( i \).
 
 		      Analogicznie pokazujemy, że \( i \) jest osiągalne z \( k \), czyli stany te są skomunikowane.
@@ -63,17 +63,17 @@ Dodatkowo w grafie skierowanym klasy równoważności relacji \( \leftrightarrow
 
 	Z nieprzywiedlności mamy:
 	\[
-		\exists_m P_{ij}(m) > 0
+		\exists_m p_{ij}(m) > 0
 	\]
 	\[
-		\exists_l P_{ji}(l) > 0
+		\exists_l p_{ji}(l) > 0
 	\]
 	Niech \( n \in \mathcal{T}(j) \)
 	\[
-		P_{ii}(m + n + l) \geq P_{ij}(m) \cdot P_{jj}(n) \cdot P_{ji}(l) > 0
+		p_{ii}(m + n + l) \geq p_{ij}(m) \cdot p_{jj}(n) \cdot p_{ji}(l) > 0
 	\]
 	\[
-		P_{ii}(m + l) \geq P_{ij}(m) \cdot P_{ji}(l) > 0
+		p_{ii}(m + l) \geq p_{ij}(m) \cdot p_{ji}(l) > 0
 	\]
 	To znaczy chcemy dojść z \( i \) do \( i \) w \(m + n + l\) krokach, więc możemy iść z \( i \) do \( j \), z \( j \) do \( j \) i z \( j \) do \( i \). W drugim przypadku pomijamy \( n \) kroków z \( j \) do \( j \).
 	\[
@@ -110,11 +110,11 @@ Dodatkowo w grafie skierowanym klasy równoważności relacji \( \leftrightarrow
 	\]
 	Z kolei z nieprzywiedlności mamy:
 	\[
-		i \rightarrow j \implies \exists_{m_1} : P_{ij}(m_1) > 0
+		i \rightarrow j \implies \exists_{m_1} : p_{ij}(m_1) > 0
 	\]
 	Niech \( n_0 = m_0 + m_1 \)
 	\[
-		\forall_{n \geq n_0} P_{ij}(n) \geq P_{ij}(m_1)P_{jj}(n-m_1) > 0
+		\forall_{n \geq n_0} p_{ij}(n) \geq p_{ij}(m_1)p_{jj}(n-m_1) > 0
 	\]
 \end{proof}
 %</probabil-2025-11-19-lancuchy-nieprzywiedlne>
