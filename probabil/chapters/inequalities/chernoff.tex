@@ -73,6 +73,7 @@
 %</probabil-2025-11-14-poisson-trial-chernoff-bound>
 
 \begin{theorem}
+	\label{poisson-trial-chernoff-lowerbounds}
 	Niech \(X_1,\ldots,X_n\) będą niezależnymi zmiennymi takimi, że \(P \pars{ X_i = 1 } = p_i\) oraz \(P \pars{ X_i = 0 } = 1-p_i\). Niech \(X = \sum_{i=1}^{n} X_i\), \(\mu = \mathbb{E}\left[ X \right] \) Wtedy dla każdego \(\delta \in (0,1)\) zachodzi:
 	\begin{enumerate}
 		\item \( P \pars{ X \le \pars{ 1-\delta } \mu } \le \pars{ \frac{e^{-\delta}}{ \pars{ 1-\delta } ^{1-\delta}} } ^{\mu}\)
