@@ -55,7 +55,7 @@
 	Łańcuch z \ref{markov-chain-example} jest odwracalny.
 \end{lemma}
 \begin{proof}
-	Ustalamy wektor \(w\), gdzie \(w_0 = 1\), \(w_k = \pi_{i=1}^k \frac{p_{i-1}}{q_i}\) dla \(k \in \set{1, \dots, n}\).
+	Ustalamy wektor \(w\), gdzie \(w_0 = 1\), \(w_k = \prod_{i=1}^k \frac{p_{i-1}}{q_i}\) dla \(k \in \set{1, \dots, n}\).
 	Pokażemy, że wektor \(w\) spełnia \ref{reversible-markov-chain}.
 
 	\begin{enumerate}
