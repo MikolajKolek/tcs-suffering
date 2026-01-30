@@ -82,7 +82,7 @@ Stąd z kolei otrzymujemy:
 \]
 Gdzie ostatnia nierówność ponownie jest prawdziwa dla takich \( i \), że \( \frac{np_i}{2^{i+1}} \geq 17\ln n\). Niech \( i^* \) będzie największym \( i \) spełniającym tą nierówność. Wtedy:
 \[
-    \prob\pars{\mathcal{F}_{i^*}} \geq \prob\pars{\mathcal{F}_{i^*} \mid \mathcal{F}_{i^* - 1}} \ldots \prob\pars{\mathcal{F}_1 \mid \mathcal{F}_0}\prob\pars{\marhcal{F}_0} \geq \pars{1 - \frac{1}{n^2}}^{i^*}
+    \prob\pars{\mathcal{F}_{i^*}} \geq \prob\pars{\mathcal{F}_{i^*} \mid \mathcal{F}_{i^* - 1}} \ldots \prob\pars{\mathcal{F}_1 \mid \mathcal{F}_0}\prob\pars{\mathcal{F}_0} \geq \pars{1 - \frac{1}{n^2}}^{i^*}
 \]
 Teraz chcielibyśmy poznać \( i^* \). Podobnie jak dla poprzedniego dowodu, tworzymy sobie ciąg nierówności. Przypomnijmy, że \( p_i = \frac{1}{2}\pars{\frac{\gamma_i}{n}}^2 \).
 \[
@@ -137,6 +137,6 @@ możemy zauważyć, że dla \( x \in (-\epsilon, 0) \)
 \]
 zatem:
 \[
-    1 - \frac{1}{n} \leq 1 - \frac{2 \ln \ln n}{n^2 \ln 2} - \pars{\frac{2 \ln \ln n}{n^2 \n 2}}^2 \leq \pars{1 - \frac{1}{n^2}}^{-n^2 \frac{- \ln \ln n}{n^2 \ln 2}}
+    1 - \frac{1}{n} \leq 1 - \frac{2 \ln \ln n}{n^2 \ln 2} - \pars{\frac{2 \ln \ln n}{n^2 \ln 2}}^2 \leq \pars{1 - \frac{1}{n^2}}^{-n^2 \frac{- \ln \ln n}{n^2 \ln 2}}
 \]
 gdzie pierwsza nierówność zachodzi dla wystarczająco dużego \( n \) a druga wynika z dolnego ograniczenia na \( e^x \).
