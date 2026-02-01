@@ -79,6 +79,7 @@ Dla demonstracji tego, o ile lepsze jest losowanie z dwoma symulacjami od standa
 \end{proof}
 
 \begin{lemma} (Lemat dualny dla \ref{binary-random-variable-binomial-upperbound}) 
+	\label{binary-random-variable-binomial-lowerbound}
 	Niech \(X_1, \dots, X_n\) to zmienne losowe, \(Y_1, \dots, Y_n\) to binarne zmienne losowe, \(Y_i = f_i(X_1, \dots, X_i)\) (jest wyznaczona przez \(X_1, \dots, X_i\)) oraz \(Z \sim \Bin(n, p)\) jest niezależna od poprzednich zmiennych. Jeśli dla każdego \(i \in [n]\) oraz \((x_1, \dots, x_{i - 1})\) takiego, że \(\prob((X_1, \dots, X_{i - 1}) = (x_1, \dots, x_{i - 1})) > 0\) zachodzi
 	\[
 		\prob(Y_i = 1 \mid (X_1, \dots, X_{i - 1}) = (x_1, \dots, x_{i - 1})) \geq p
@@ -86,6 +87,10 @@ Dla demonstracji tego, o ile lepsze jest losowanie z dwoma symulacjami od standa
 	to
 	\[
 		\prob\pars{\sum_{i = 1}^n Y_i > k} \geq \prob(Z > k)
+	\]
+	a więc też
+	\[
+		\prob\pars{\sum_{i = 1}^n Y_i < k} \leq \prob(Z < k)
 	\]
 \end{lemma}
 \begin{proof}
