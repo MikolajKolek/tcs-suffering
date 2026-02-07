@@ -41,7 +41,7 @@ Ta smutniejsza część.
 	\begin{align*}
 		P(N_1(t) = k)
 		 & = \sum_{j=k}^\infty P(N_1(t) = k \mid N(t) = j) \cdot P(N(t) = j)                                             \\
-		 & = \sum_{j=k}^\infty p^k \cdot (1-p)^{j-k} \cdot e^{-\lambda t} \cdot \frac{(\lambda t)^j}{j!}                 \\
+		 & = \sum_{j=k}^\infty \binom{j}{k} p^k \cdot (1-p)^{j-k} \cdot e^{-\lambda t} \cdot \frac{(\lambda t)^j}{j!}                 \\
 		 & = e^{-\lambda p t} \cdot \frac{(\lambda p t)^k}{k!} \cdot e^{-\lambda (1 - p) t} \cdot
 		\sum_{j=k}^\infty \frac{(\lambda t)^{j-k}}{(j-k)!}                                                               \\
 		 & = e^{-\lambda p t} \cdot \frac{(\lambda p t)^k}{k!} \cdot e^{-\lambda (1 - p) t}  \cdot e^{\lambda (1 - p) t} \\
