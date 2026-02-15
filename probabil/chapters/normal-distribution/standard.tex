@@ -73,7 +73,7 @@ Całki:
 nie jesteśmy w stanie ładnie rozwiązać, więc posłużymy się takim trikiem:
     \begin{align*}
     \int_{-\infty}^{\infty} e^{-\frac{z^2}{2}} \diff z \cdot \int_{-\infty}^{\infty} e^{-\frac{z^2}{2}} \diff z &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-\frac{x^2 + y^2}{2}} \diff x \diff y \\
-    &= \int_0^{2\pi} \int_0^{\infty} e^{-\frac{r^2}{2}} \cdot e \diff r \diff \theta \\
+    &= \int_0^{2\pi} \int_0^{\infty} e^{-\frac{r^2}{2}} \cdot r \diff r \diff \theta \\
     &= \int_0^{2\pi} \int_0^{\infty} e^{-u} \diff u \diff \theta \\
     &= \int_0^{2\pi} 1 \diff \theta = 2\pi
     \end{align*}
