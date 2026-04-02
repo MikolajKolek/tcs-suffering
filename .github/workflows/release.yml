@@ -3,6 +3,7 @@
 
 name: release
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -14,6 +15,12 @@ concurrency:
 jobs:
   release:
     name: Build and release PDFs
+    permissions:
+      actions: write
+      contents: write
+      id-token: write
+      pages: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
       - name: Setup Git repository (shallow)
@@ -90,6 +97,14 @@ jobs:
               fi
             done
 
+      - name: Upload pdfs as a pages artifact
+        id: deployment-upload
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_build/results/
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       - name: Update the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -118,7 +133,8 @@ jobs:
             gh release upload pdfs "./_build/results/${dir}.log" --clobber
 
             if [ -f "./_build/results/${dir}.pdf" ]; then
-              BUILD="$BUILD<br>[PDF&nbsp;file](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
+              BUILD="$BUILD<br>[PDF&nbsp;file](${{ steps.deployment.outputs.page_url }}${dir}.pdf)"
+              BUILD="$BUILD<br>[PDF&nbsp;file&nbsp;(download)](https://github.com/$GH_REPO/releases/download/pdfs/${dir}.pdf)"
               gh release upload pdfs "./_build/results/${dir}.pdf" --clobber
             else
               grep -q "^${dir}.pdf$" ./.build-old-assets && gh release delete-asset pdfs "${dir}.pdf"
