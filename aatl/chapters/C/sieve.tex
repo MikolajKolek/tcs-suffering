@@ -52,7 +52,7 @@ Trzeba rozłożyć liczby \( Y[i] \) na czynniki -- najlepiej wszystkie na raz, 
 		\item Jeśli \( Y[i] \) zmaleje do 1, to początkowo musiało być liczbą \( B \)-gładką.
 	\end{enumerate}
 \end{greyframe}
-W kroku 1. (a) odrzucamy \(p\), ponieważ w takim przypadku \(X[i]^2 - N \pmod{p}\) nigdy nie może być równe 0, a więc \(p\) nie może dzielić żadnego \(Y[i]\). 
+W kroku 1. (a) odrzucamy \(p\), ponieważ w takim przypadku \(X[i]^2 - N \pmod{p}\) nigdy nie może być równe 0, a więc \(p\) nie może dzielić żadnego \(Y[i]\).
 
 W ramach dodatkowego usprawnienie algorytmu, możemy uniknąć dzielenia dużych liczb. Zamiast wartości \( Y[i] \) przechowujemy \( Z[i] = \log Y[i] \).
 Wtedy operację \( \frac{Y[i]}{p} \) zastępujemy działaniem \( Z[i] - \log p \). Warunkiem \( B \)-gładkości jest (prawie) wyzerowanie się \( Z[i] \).
