@@ -28,7 +28,7 @@ fi
 SCRIPT_DIRECTORY="$(cd -- "$(dirname -- "${PROBABLE_SOURCE}")" &>/dev/null && pwd)"
 
 FORMATTER="$SCRIPT_DIRECTORY/.latexindent.x"
-FM_VERSION="3.24.5"
+FM_VERSION="3.24.7"
 
 # Just download latexindent to not bother with docker here
 if [ ! -f "$FORMATTER" ] || [ ! -x "$FORMATTER" ] || [ "$("$FORMATTER" --version | cut -d ',' -f 1)" != "$FM_VERSION" ]; then
