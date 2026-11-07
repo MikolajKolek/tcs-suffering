@@ -1,0 +1,16 @@
+% Packages and commands used by the solutions copied from Probabil
+\ProvidesPackage{zestawy}
+
+\usepackage{needspace}
+
+% Solution author, placed right below the task's \section
+\newcommand{\autor}[1]{%
+  \par\vspace{-0.6\baselineskip}%
+  {\small\itshape\color{black!75}#1}\par
+}
+
+% Unsolved task: \section[\nierozwiazane{Zadanie N}]{Zadanie N}, then \brakrozwiazania
+\newcommand{\nierozwiazane}[1]{%
+  \texorpdfstring{\textcolor{gray}{#1 (nierozwiązane)}}{#1 (nierozwiązane)}%
+}
+\newcommand{\brakrozwiazania}{\textit{Brak rozwiązania.}}
