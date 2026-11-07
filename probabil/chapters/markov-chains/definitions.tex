@@ -20,17 +20,17 @@
 
 \begin{definition}
 	\textbf{Łańcuchem Markowa} nazywamy proces stochastyczny z czasem dyskretnym \(\set{X_t}_{t \in \natural}\) dla którego
-	
+
 	\begin{enumerate}
 		\item dla każdego \(t \geq 0\) oraz \((a_0, \dots, a_t)\) takiego, że \(\prob(\bigcap_{i=0}^t X_i = a_i) > 0\) zachodzi
-		\[
-			\prob\pars{X_{t + 1} = y \mid \bigcap_{i=0}^t X_i = a_i} = \prob\pars{X_{t + 1} = y \mid X_t = a_t}
-		\]
+		      \[
+			      \prob\pars{X_{t + 1} = y \mid \bigcap_{i=0}^t X_i = a_i} = \prob\pars{X_{t + 1} = y \mid X_t = a_t}
+		      \]
 		\item dla każdego \(t \geq 0\) i \(x, y \in S\) zachodzi
-		\[
-			\prob(X_{t+1} = x \mid X_t = y) = \prob(X_t = x \mid X_{t-1} = y)
-		\]
-	\end{enumerate} 
+		      \[
+			      \prob(X_{t+1} = x \mid X_t = y) = \prob(X_t = x \mid X_{t-1} = y)
+		      \]
+	\end{enumerate}
 \end{definition}
 
 Właściwość 1. mówi nam, że aby dostać rozkład zmiennej \(X_t\) wystarczy, że znamy rozkład zmiennej \(X_{t-1}\) tzn. łańcuch Markowa jest bez pamięci. Warto zauważyć, że \textbf{nie oznacza to}, że \(X_t\) jest niezależne od \(X_{t-2}, X_{t-3}, \dots\) -- jest, ale cała ta zależność jest zawarta w zależności od stanu \(X_{t-1}\).
@@ -83,15 +83,15 @@ Intuicyjnie rozkład stacjonarny opisuje jak często asymptotycznie odwiedzamy k
 	\[
 		\sum_{y \in S} \overline{\pi_{z, y}} = \mathbb{E}_z[T_z^+]
 	\]
-	
+
 	Pozostaje nam więc tylko udowodnić część pierwszą
 	\begin{align*}
-		\sum_{x \in S} \overline{\pi_{z, x}} p_{x, y} &= \sum_{x \in S} \sum_{t=0}^{\infty} \prob_z(X_t = x \land T_z^+ > t) p_{x, y}\\
-		&= \sum_{t=0}^\infty \prob_z(X_{t+1} = y \land T_z^+ \geq t + 1)\\
-		&= \sum_{t=1}^\infty \prob_z(X_{t} = y \land T_z^+ \geq t)\\
-		&= \overline{\pi_{z, y}} - \prob_z(X_0 = y \land T_z^+ > 0) + \sum_{t=1}^\infty \prob_z(X_t = y \land T_z^+ = t)\\
-		&= \overline{\pi_{z, y}} - \prob_z(X_0 = y) + \prob_z(X_{T_z^+} = y)\\
-		&= \overline{\pi_{z, y}}
+		\sum_{x \in S} \overline{\pi_{z, x}} p_{x, y} & = \sum_{x \in S} \sum_{t=0}^{\infty} \prob_z(X_t = x \land T_z^+ > t) p_{x, y}                                  \\
+		                                              & = \sum_{t=0}^\infty \prob_z(X_{t+1} = y \land T_z^+ \geq t + 1)                                                 \\
+		                                              & = \sum_{t=1}^\infty \prob_z(X_{t} = y \land T_z^+ \geq t)                                                       \\
+		                                              & = \overline{\pi_{z, y}} - \prob_z(X_0 = y \land T_z^+ > 0) + \sum_{t=1}^\infty \prob_z(X_t = y \land T_z^+ = t) \\
+		                                              & = \overline{\pi_{z, y}} - \prob_z(X_0 = y) + \prob_z(X_{T_z^+} = y)                                             \\
+		                                              & = \overline{\pi_{z, y}}
 	\end{align*}
 	\(\prob_z(X_0 = y) = \prob_z(X_{T_z^+} = y)\) ponieważ oba są indykatorami \(y = z\).
 \end{proof}
@@ -124,7 +124,7 @@ Intuicyjnie rozkład stacjonarny opisuje jak często asymptotycznie odwiedzamy k
 	Dodatkowo, jeśli łańcuch jest nieokresowy
 	\begin{enumerate}
 		\setcounter{enumi}{2}
-		\item \(\forall_{i, j \in S} \lim_{t \to \infty} p_{j, i}(t) = \pi_i\) 
+		\item \(\forall_{i, j \in S} \lim_{t \to \infty} p_{j, i}(t) = \pi_i\)
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -171,7 +171,7 @@ Intuicyjnie rozkład stacjonarny opisuje jak często asymptotycznie odwiedzamy k
 \begin{definition}
 	Dla \( i \in S \) definiujemy \(\mathcal{T}(i) = \set{t \geq 1 \mid p_{ii}(t) > 0}\). Jest to zbiór takich \( t \), że jesteśmy w stanie dojść z \( i \) do \( i \) w t krokach.
 \end{definition}
-\begin{definition} 
+\begin{definition}
 	\textbf{Okres stanu} dla \(i \in S\) definiujemy jako \(o(i) = \gcd\pars{\mathcal{T}(i)}\)
 \end{definition}
 
