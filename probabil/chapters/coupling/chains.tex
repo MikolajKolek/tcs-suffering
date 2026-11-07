@@ -3,7 +3,7 @@
 Będziemy rozważać łańcuch Markowa \(\left( X_t \right) _{t \in \N}\) (skończony, nieprzywiedlny, nieokresowy) o macierzy przejścia \(P\), zbiorze stanów \(S\) i rozkładzie stacjonarnym \(\left( \pi_x \right) _{x \in S}\). Przez \(P^{t}\left( x, \cdot \right) \) oznaczamy rozkład \(X_t\) przy założeniu \(X_0 = x \).
 
 \begin{definition}
-	Definiujemy 
+	Definiujemy
 	\[\Delta_x\left( t  \right) = \left\|P^{t}\left( x, \cdot  \right) - \pi\right\|_{TV}\]
 	\[\tau_x\left( \varepsilon  \right) = \min \left\{ t : \Delta_x\left( t  \right) \le \varepsilon  \right\} \]
 	Mamy też maksima tych wartości:
@@ -78,16 +78,16 @@ Będziemy rozważać łańcuch Markowa \(\left( X_t \right) _{t \in \N}\) (skoń
 	W przeciwnym przypadku rzucamy monetą, na której orzeł wypada z prawdopodobieństem \(m\):
 	\begin{itemize}
 		\item Jeżeli wypadnie orzeł, to \(X_{t+1} = Y_{t+1} = x\), gdzie \(x\) wybieramy losowo z rozkładem:
-			\[
-				\pars{\frac{1}{m} m_y \mid y \in S}
-			\]
+		      \[
+			      \pars{\frac{1}{m} m_y \mid y \in S}
+		      \]
 		\item Jeżeli wypadnie reszka, to \(X_{t+1} = x_1'\), \(Y_{t+1} = x_2'\), gdzie \(x_1'\) i \(x_2'\) wybieramy kolejno z rozkładami:
-			\[
-				\pars{\frac{1}{1-m} \pars{P^r(x_1, y) - m_y} \mid y \in S}
-			\]
-			\[
-				\pars{\frac{1}{1-m} \pars{P^r(x_2, y) - m_y} \mid y \in S}
-			\]
+		      \[
+			      \pars{\frac{1}{1-m} \pars{P^r(x_1, y) - m_y} \mid y \in S}
+		      \]
+		      \[
+			      \pars{\frac{1}{1-m} \pars{P^r(x_2, y) - m_y} \mid y \in S}
+		      \]
 	\end{itemize}
 
 	W ten sposób skonstruowaliśmy sprzęganie, dla którego zachodzi:
